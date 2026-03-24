@@ -95,6 +95,9 @@ class ConvertToCSV(CurrencyDecorator):
 class ConvertToYAML(CurrencyDecorator):
     """Декоратор: конвертация данных в YAML-формат."""
 
+    def get_currencies(self) -> Dict[str, Any]:
+        return self._currencies.get_currencies()
+
     def get_currencies_yaml(self) -> str:
         """Получить данные в YAML-формате как строку."""
         data = self._currencies.get_currencies()
